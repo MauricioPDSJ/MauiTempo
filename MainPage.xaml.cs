@@ -45,6 +45,13 @@ namespace MauiTempo
 
                     if (previsao != null)
                     {
+						  string url_mapa = $"https://embed.windy.com/embed.html" +
+                                           $"?type=map&location=coordinates&metricRain=mm" +
+                                           $"&metricTemp=°C&metricWind=km/h&zoom=5&overlay=wind" +
+                                           $"&product=ecmwf&level=surface" +
+                                           $"&lat={previsao.Latitude}&lon={previsao.Longitude}";
+
+						mapa.Source = url_mapa;
                         await App.Db.Insert(previsao);
                         dados_previsao = $"Humidade: {previsao.Humidity} \n" +
                                          $"Nascer do Sol: {previsao.Sunrise} \n " +

@@ -11,7 +11,7 @@
                HorizontalOptions="Center" 
                TextColor="#4CAF50"/>
 
-            <Button Text="Obter Localização "
+            <Button Text="Obter Localização"
                 x:Name="btn_localizacao"
                 Clicked="btn_localizacao_Clicked"
                 BackgroundColor="#4CAF50"
@@ -58,6 +58,9 @@
                FontSize="16"
                TextColor="#333"
                Padding="10"/>
+			   
+			<WebView x:Name="mapa" HeightRequest="500">
+            </WebView>
 
             <CollectionView x:Name="tempoCollectionView"
                         ItemsSource="{Binding TempoList}">
